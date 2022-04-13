@@ -1,9 +1,14 @@
+// pengecekan unique user
+window.addEventListener("load", () => {
 
-// pengecekan unique user 
+  let users = localStorage.getItem("_users")
 
+  if(!users){
+    localStorage.setItem("_users", "[]")
+  }
 
+});
 
-const handleSlide = (to)=>{
-    window.location.href = to
-}
-
+const handleSlide = (to) => {
+  window.location.href = to
+};
