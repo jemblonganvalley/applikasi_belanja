@@ -1,11 +1,13 @@
-// tangkap element list_added
-let list_added = document.getElementById("list_added")
+
 
 // penampung data list
 let data_list = []
 
 // fungsi untuk menambahkan data list
 const addList = ()=>{
+
+    // tangkap element list_added
+    let list_added = document.getElementById("list_added")
 
     let inputList = document.getElementById("list")
 
