@@ -47,3 +47,44 @@ const addList = ()=>{
     inputList.value = ""
 
 }
+
+// confirm submit list belanja
+const handleSubmitList = ( event )=>{
+
+    // hentikan form untuk reload page
+    event.preventDefault()
+    
+    // ambil data user dari localstorage
+    const user = JSON.parse(localStorage.getItem("isLogin"))
+
+    // ambil judul
+    const judul = event.target.judul.value
+
+    console.info({
+        id : Date.now(),
+        user : user,
+        judul : judul,
+        list : data_list
+    })
+
+    // ambil data _listbelanja
+    let _listbelanja = JSON.parse(localStorage.getItem("_listbelanja")) // array
+
+    // buat data baru
+    let newList = {
+        id : Date.now(),
+        user : user,
+        judul : judul,
+        list : data_list
+    }
+
+    // push atau masukan data ke array _listbelanja
+    _listbelanja.push(newList)
+
+    // store ke local storage
+    localStorage.setItem("_listbelanja", JSON.stringify(_listbelanja))
+
+    // lempar page ke page listbelanja
+    window.location.href = "/dashboard/list.html"
+
+}

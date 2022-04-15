@@ -16,7 +16,7 @@ const handleLogin = (event)=>{
 
     // find user
     let findUser = users.filter((item)=>{
-        return item.email === email
+        return item.email === email // array
     })
 
     if(findUser.length == 0){
@@ -35,7 +35,10 @@ const handleLogin = (event)=>{
     }
 
     // setstorage bernama isLogin
-    localStorage.setItem("isLogin", true)
+    localStorage.setItem("isLogin",  JSON.stringify({
+        email : findUser[0].email,
+        username : findUser[0].username
+    })) 
 
     alert("Login berhasil")
 

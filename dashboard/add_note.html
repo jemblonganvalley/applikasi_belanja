@@ -18,7 +18,7 @@
             Tambah List Belanja
         </h1>
 
-        <form class="w-full flex flex-col gap-4 mt-6 mb-[100px]">
+        <form class="w-full flex flex-col gap-4 mt-6 mb-[100px]" onsubmit="handleSubmitList(event)" >
 
             <label for="judul" class="text-gray-500 font-light uppercase text-xl">
                 Judul List
@@ -38,7 +38,7 @@
 
             <div id="list_added" class="w-full flex flex-col gap-2"></div>
 
-            <button class="h-12 bg-orange-500 text-white uppercase w-full rounded-md flex justify-center items-center">
+            <button class="h-12 bg-orange-500 text-white uppercase w-full rounded-md flex justify-center items-center" type="submit">
                 simpan
             </button>
 

@@ -1,6 +1,22 @@
 
 window.addEventListener("load", ()=>{
-    
+
+    // check apakah data _listbelanja sudah ada
+    const _listbelanja = localStorage.getItem("_listbelanja")
+
+    // jika belum ada maka kita buatkan
+    if(!_listbelanja){
+        localStorage.setItem("_listbelanja", "[]")
+    }
+
+    // check apakah _listbelanja_finish sudah ada 
+    const _listbelanja_finish = localStorage.getItem("_listbelanja_finish")
+
+    // jika tidak kita buatkan
+    if(!_listbelanja_finish){
+        localStorage.setItem("_listbelanja_finish", "[]")
+    }
+
     // kita akan tambahkan element navbar ke body
     document.body.innerHTML += `
     <div class="w-full p-6 fixed bottom-0 left-0 z-[100] ">
